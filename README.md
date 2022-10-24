@@ -1,6 +1,6 @@
 # Salesforce DX Babashka Example Project
 
-This project was created using the command `https://github.com/nextdoc/salesforce-babashka-sample.git` 
+This project was created using the command `sfdx force:project:create --projectname salesforce-babashka-sample`
 
 Then a bb.edn file was added to provide DX scripting using tasks from https://github.com/nextdoc/salesforce-babashka
 
