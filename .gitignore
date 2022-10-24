@@ -38,3 +38,7 @@ $RECYCLE.BIN/
 
 # Local environment variables
 .env
+.clj-kondo/.cache/v1/lock
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
