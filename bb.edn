@@ -1,0 +1,53 @@
+{:paths          []
+ :min-bb-version "1.0.164"
+ :deps           {zprint/zprint               {:mvn/version "1.2.4"}
+                  org.babashka/spec.alpha     {:git/url "https://github.com/babashka/spec.alpha"
+                                               :git/sha "1a841c4cc1d4f6dab7505a98ed2d532dd9d56b78"}
+                  nextdoc/salesforce-babashka {:git/url "git@github.com:nextdoc/salesforce-babashka.git"
+                                               :git/sha "e6e03869590a2a4d9c1abc7d990d0cd887bb987f"}}
+ :tasks          {:requires               ([tasks]
+                                           [zprint.core :as z])
+                  :enter                  (println "Starting" (:name (current-task)) "...")
+                  :leave                  (println "Finished" (:name (current-task)) "\n")
+
+                  parse-args              {:doc "parse the CLI arguments, validating them using the tasks spec"
+                                           :task (def options (exec 'tasks/parse-dx-cli-options))}
+
+                  sf:scratch-org-list     {:doc "print a summary of scratch orgs"
+                                           :depends []
+                                           ; long form showing individual task fns
+                                           :task    (->> {:cli     "sf"
+                                                          :command "env list"}
+                                                         (tasks/cli-response)
+                                                         (tasks/checked-result)
+                                                         :scratchOrgs
+                                                         (map :aliases)
+                                                         (map first)
+                                                         (z/czprint))}
+                  sf:create-scratch-org   {:doc "create a scratch org that is valid for 30 days. make it the default. assumes a default dev hub has been set."
+                                           :depends [parse-args]
+                                           :task    (->> {:cli     "sfdx"
+                                                          :command "force:org:create"
+                                                          :args    {:definition-file      "config/project-scratch-def.json"
+                                                                    :duration-days        30
+                                                                    :wait                 6
+                                                                    :set-alias            (:org-name options)
+                                                                    :set-default-username true}}
+                                                         (tasks/cli-response)
+                                                         (tasks/checked-result)
+                                                         (z/czprint))}
+                  sf:deploy-app           {:doc "deploy metadata from the force-app dir"
+                                           :depends     [sf:create-scratch-org]
+                                           ; short form deploy composing task fns
+                                           :task    (tasks/deploy-metadata! "force-app")}
+                  sf:create-and-open-org {:doc     "create a new scratch org, load metadata and data and open"
+                                          :depends [sf:deploy-app]
+                                          :task    (tasks/cli-response {:cli     "sfdx"
+                                                                        :command "force:org:open"})}
+
+                  sf:open                 {:doc     "open the default scratch org"
+                                           :depends []
+                                           :task    (-> {:cli     "sfdx"
+                                                         :command "force:org:open"}
+                                                        (tasks/cli-response)
+                                                        (z/czprint))}}}
