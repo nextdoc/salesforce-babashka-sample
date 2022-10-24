@@ -1,18 +1,15 @@
-# Salesforce DX Project: Next Steps
+# Salesforce DX Babashka Example Project
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+This project was created using the command `https://github.com/nextdoc/salesforce-babashka-sample.git` 
 
-## How Do You Plan to Deploy Your Changes?
+Then a bb.edn file was added to provide DX scripting using tasks from https://github.com/nextdoc/salesforce-babashka
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+# How to use this?
 
-## Configure Your Salesforce DX Project
+You will need to install Babashka https://book.babashka.org/#_installation
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+You can either:
+1. clone this repo
+2. copy the bb.edn from here into your own repo 
 
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+Once you have a bb.edn file, you can try `bb tasks` to see what is available
