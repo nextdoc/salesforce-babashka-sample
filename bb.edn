@@ -4,7 +4,7 @@
                   org.babashka/spec.alpha     {:git/url "https://github.com/babashka/spec.alpha"
                                                :git/sha "1a841c4cc1d4f6dab7505a98ed2d532dd9d56b78"}
                   nextdoc/salesforce-babashka {:git/url "git@github.com:nextdoc/salesforce-babashka.git"
-                                               :git/sha "a4d211907b359dd014e5d10158914a97375b3f00"}}
+                                               :git/sha "c8a92f835793b1ffe6798e13887c30e7c237f671"}}
  :tasks          {:requires               ([tasks]
                                            [zprint.core :as z])
                   :enter                  (println "Starting" (:name (current-task)) "...")

@@ -44,3 +44,4 @@ $RECYCLE.BIN/
 .vscode/extensions.json
 .calva
 .clj-kondo
+.lsp/.cache/db.transit.json
