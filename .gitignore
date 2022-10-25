@@ -42,3 +42,5 @@ $RECYCLE.BIN/
 .vscode/settings.json
 .vscode/launch.json
 .vscode/extensions.json
+.calva
+.clj-kondo

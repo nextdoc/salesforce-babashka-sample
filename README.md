@@ -14,8 +14,8 @@ You can either:
 
 Once you have a bb.edn file, you can try `bb tasks` to see what is available
 
-Then try `bb sf:scratch-org-list` to run a read-only task. Look at the bb.edn to see how it works.
+Then try `bb nxd:scratch-org-list` to run a read-only task. Look at the bb.edn to see how it works.
 
-There is another task named *sf:create-and-open-org* which will run a sequence of CLI steps to create, deploy and open a new scratch org.
+There is another task named *nxd:create-and-open-org* which will run a sequence of CLI steps to create, deploy and open a new scratch org.
 This is the best example of the power of using Babashka in this environment. 
 
