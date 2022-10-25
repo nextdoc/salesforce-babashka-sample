@@ -14,15 +14,15 @@ This is a Salesforce *source tracked* project that shows how to create automatio
 - tasks are sequenced using dependencies (similar to makefiles)
 - tasks can use data from previous tasks
 
-The scripts are written in Clojure using the (Babashka tasks)[https://book.babashka.org/#tasks] feature so they start as fast as other scripting languages. Babashka is portable i.e. runs on Windows, Mac and Linux.
+The scripts are written in Clojure using the [Babashka tasks](https://book.babashka.org/#tasks) feature so they start as fast as other scripting languages. Babashka is portable i.e. runs on Windows, Mac and Linux.
 
 This project was created using the command `sfdx force:project:create --projectname salesforce-babashka-sample`
 
-Then the sample bb.edn file was added to provide DX scripting using tasks from https://github.com/nextdoc/salesforce-babashka and that's it. It should be the same for you.
+Then the sample bb.edn file was added to provide DX scripting using functions from https://github.com/nextdoc/salesforce-babashka and that's it. It should be the same for you.
 
 ## How to use this?
 
-You will need to (install Babashka)[https://book.babashka.org/#_installation]
+You will need to [install Babashka](https://book.babashka.org/#_installation)
 
 Then you can either:
 1. clone this repo
