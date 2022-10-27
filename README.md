@@ -41,10 +41,14 @@ This is a good example of the power of using Babashka in this environment.
 
 ## Why use this?
 
-This is a Clojure and Functional programming gateway drug but it's very simple code and easy to learn.
+This is a Clojure and Functional programming gateway drug but it's very simple code and easy to learn. 
 
-TODO blog post link
+Watch [this video](https://youtu.be/t4pDcEIi0Tc) to see how to get started and why you might use this tooling.
 
 ## How can you help?
+
+Log issues (or upvote) requesting missing features. As with all OSS, we can't promise how quickly we will add them but it will tell us where the greatest need exists.
+
+If a popular request is easy to add, we'll do it or will show you how.
 
 If your company uses these tools, please consider [sponsoring the author](https://github.com/sponsors/borkdude) of Babashka.
