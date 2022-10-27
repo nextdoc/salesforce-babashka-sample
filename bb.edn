@@ -37,7 +37,7 @@
                                                           (tasks/checked-result)
                                                           (z/czprint))}
 
-                  nxd:install-package {:doc "install Lightning Mapp package, version 0.5"
+                  nxd:install-package {:doc "install Lightning Map package, version 0.5"
                                        :depends [nxd:create-scratch-org]
                                        :task (let [maps-version-id "04t1n000002WsInAAK"]
                                                (def app1-install-result
